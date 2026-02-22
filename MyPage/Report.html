@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Momogosso - Report Hub</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: { extend: { colors: { "primary": "#F35C1B", "background-light": "#f8f7f6" } } }
+        }
+    </script>
+    <style>body { font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif; }</style>
+</head>
+<body class="bg-[#f0f0f0] flex justify-center items-center min-h-screen">
+    <div class="w-full max-w-[480px] h-[95vh] flex flex-col bg-background-light relative shadow-2xl overflow-hidden rounded-[40px] border-[8px] border-white">
+        
+        <header class="flex items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-2">
+                <button onclick="location.href='index.html'" class="w-8 h-8 flex items-center justify-center hover:bg-black/5 rounded-full transition-colors">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <h1 class="text-xl font-bold">리포트</h1>
+            </div>
+            <button class="w-10 h-10 flex items-center justify-center"><span class="material-symbols-outlined">more_horiz</span></button>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-6 space-y-4 no-scrollbar">
+            <div class="flex p-1 bg-gray-200 rounded-xl mb-4">
+                <button class="flex-1 py-2 text-sm font-bold text-white bg-primary rounded-lg shadow-sm">주</button>
+                <button class="flex-1 py-2 text-sm font-medium text-gray-500">월</button>
+                <button class="flex-1 py-2 text-sm font-medium text-gray-500">연</button>
+            </div>
+
+            <div class="w-full bg-white rounded-3xl p-6 shadow-sm border border-[#f4f2f0] relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-10 -mt-10"></div>
+                <span class="inline-flex px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full mb-4">NEW</span>
+                <h3 class="text-lg font-bold leading-tight mb-2">이번 주는 <span class="text-primary">한식</span>을<br>가장 많이 드셨네요! 🍚</h3>
+                <p class="text-xs text-gray-400 mb-6">지난주보다 밥심으로 버틴 날이 많았어요.</p>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                    <div class="flex -space-x-2"><div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">🥘</div><div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">🥗</div></div>
+                    <span class="text-sm font-bold text-primary flex items-center gap-1">상세 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl flex items-center gap-4 border border-gray-50 shadow-sm">
+                <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-xl">🥪</div>
+                <div class="flex-1"><p class="text-[10px] text-gray-400">2월 1주차</p><h4 class="text-sm font-bold">간편식이 대세였던 한 주</h4></div>
+                <span class="material-symbols-outlined text-gray-300">chevron_right</span>
+            </div>
+            <div class="bg-white p-4 rounded-2xl flex items-center gap-4 border border-gray-50 shadow-sm opacity-60">
+                <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-xl">🍝</div>
+                <div class="flex-1"><p class="text-[10px] text-gray-400">1월 4주차</p><h4 class="text-sm font-bold">면 요리 마니아 등극!</h4></div>
+                <span class="material-symbols-outlined text-gray-300">chevron_right</span>
+            </div>
+        </main>
+
+        <nav class="bg-white border-t border-gray-100 px-6 pb-8 pt-3 flex justify-between">
+            <a href="#" class="flex flex-col items-center gap-1 text-gray-400"><span class="material-symbols-outlined">home</span><span class="text-[10px]">홈</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-gray-400"><span class="material-symbols-outlined">edit_square</span><span class="text-[10px]">기록</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-gray-400"><span class="material-symbols-outlined">group</span><span class="text-[10px]">커뮤니티</span></a>
+            <a href="index.html" class="flex flex-col items-center gap-1 text-primary"><span class="material-symbols-outlined fill-1">person</span><span class="text-[10px]">마이페이지</span></a>
+        </nav>
+    </div>
+</body>
+</html>
