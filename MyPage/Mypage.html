@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Momogosso - My Page</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: { extend: { colors: { "primary": "#F35C1B", "background-light": "#f8f7f6" } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif; -webkit-font-smoothing: antialiased; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-[#f0f0f0] flex justify-center items-center min-h-screen">
+    <div class="w-full max-w-[480px] h-[95vh] flex flex-col bg-background-light relative shadow-2xl overflow-hidden rounded-[40px] border-[8px] border-white">
+        
+        <header class="flex items-center justify-between px-6 pt-6 pb-2">
+            <h1 class="text-xl font-bold">마이페이지</h1>
+            <button onclick="location.href='Setting.html'" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined text-[#181411]">settings</span>
+            </button>
+        </header>
+
+        <main class="flex-1 overflow-y-auto no-scrollbar pb-24">
+            <section class="px-6 pt-4 pb-8 flex flex-col items-center">
+                <div class="w-24 h-24 rounded-full bg-gray-200 overflow-hidden mb-4 border-4 border-white shadow-sm">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" class="w-full h-full">
+                </div>
+                <h2 class="text-xl font-bold mb-1">익명_273</h2>
+                <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">Lv. 3 미식가</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-500 text-xs font-medium rounded-full">30일 연속 🔥</span>
+                </div>
+            </section>
+
+            <section class="px-6 mb-8">
+                <div onclick="openPopup()" class="bg-white p-5 rounded-2xl shadow-sm border border-[#f4f2f0] cursor-pointer hover:border-primary/30 transition-all">
+                    <div class="flex justify-between items-center mb-6"><span class="font-bold text-lg">2023년 10월</span></div>
+                    <div class="grid grid-cols-7 gap-y-4 text-center text-sm">
+                        <div class="text-gray-400 text-xs font-bold">일</div><div class="text-gray-400 text-xs font-bold">월</div><div class="text-gray-400 text-xs font-bold">화</div><div class="text-gray-400 text-xs font-bold">수</div><div class="text-gray-400 text-xs font-bold">목</div><div class="text-gray-400 text-xs font-bold">금</div><div class="text-gray-400 text-xs font-bold">토</div>
+                        <div class="col-start-1 py-2 text-gray-300">24</div><div class="py-2 text-gray-300">25</div><div class="py-2 text-gray-300">26</div>
+                        <div class="py-2 bg-primary text-white rounded-full font-bold shadow-md">1</div><div class="py-2">2</div><div class="py-2">3</div><div class="py-2">4</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="px-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-[#f4f2f0] flex items-center justify-between">
+                    <div><h3 class="text-lg font-bold">리포트 확인하기</h3><p class="text-xs text-gray-500">식습관 분석 보러가기</p></div>
+                    <button onclick="location.href='report.html'" class="px-5 py-2.5 bg-primary text-white text-sm font-bold rounded-xl shadow-lg shadow-primary/20">보러가기</button>
+                </div>
+            </section>
+        </main>
+
+        <nav class="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-6 pb-8 pt-3 flex justify-between">
+            <a href="#" class="flex flex-col items-center gap-1 text-gray-400"><span class="material-symbols-outlined">home</span><span class="text-[10px]">홈</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-gray-400"><span class="material-symbols-outlined">edit_square</span><span class="text-[10px]">기록</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-gray-400"><span class="material-symbols-outlined">group</span><span class="text-[10px]">커뮤니티</span></a>
+            <a href="index.html" class="flex flex-col items-center gap-1 text-primary"><span class="material-symbols-outlined fill-1">person</span><span class="text-[10px] font-bold">마이페이지</span></a>
+        </nav>
+
+        <div id="overlay" class="fixed inset-0 bg-black/40 backdrop-blur-[2px] z-[50] opacity-0 pointer-events-none transition-opacity duration-300" onclick="closePopup()"></div>
+        <div id="popup" class="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto bg-white rounded-t-[32px] p-6 pb-12 z-[60] transform translate-y-full transition-transform duration-300">
+            <div class="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-6"></div>
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold">10월 1일</h2>
+                <button onclick="closePopup()" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-2xl flex items-center gap-4 mb-6">
+                <div class="w-20 h-20 rounded-xl bg-gray-200 overflow-hidden"><img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover"></div>
+                <div class="flex-1"><h3 class="text-lg font-bold">김치찌개</h3><p class="text-sm text-gray-400">역삼동 대독장</p></div>
+            </div>
+            <button class="w-full h-14 bg-primary text-white font-bold rounded-2xl shadow-lg">기록 상세 보기</button>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('overlay').classList.add('opacity-100', 'pointer-events-auto');
+            document.getElementById('popup').classList.remove('translate-y-full');
+        }
+        function closePopup() {
+            document.getElementById('overlay').classList.remove('opacity-100', 'pointer-events-auto');
+            document.getElementById('popup').classList.add('translate-y-full');
+        }
+    </script>
+</body>
+</html>
